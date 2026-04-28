@@ -1,11 +1,5 @@
-*
-!/.gitignore
-!/wp-content/
-!/wp-content/**
-!.agent
-!.agent/**
 wp-content/.DS_Store
-
+ 
 wp-content/themes/*/node_modules/
 wp-content/themes/*/.sass-cache/
 wp-content/plugins/**
