@@ -2,6 +2,7 @@
 !/.gitignore
 !/wp-content/
 !/wp-content/**
+!.agent
 wp-content/.DS_Store
 
 wp-content/themes/*/node_modules/
