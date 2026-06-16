@@ -215,6 +215,26 @@ add_action('init', 'bbp_block_admin_access', 0);
 remove_action('template_redirect', 'wp_redirect_admin_locations', 1000);
 
 /**
+ * Disable XML-RPC to prevent brute force and DDoS attacks via xmlrpc.php.
+ */
+add_filter('xmlrpc_enabled', '__return_false');
+
+function bbp_block_xmlrpc()
+{
+    if (defined('XMLRPC_REQUEST') && XMLRPC_REQUEST) {
+        status_header(403);
+        exit;
+    }
+}
+add_action('init', 'bbp_block_xmlrpc', 0);
+
+/**
+ * Remove XML-RPC and RSD link from <head>.
+ */
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');
+
+/**
  * Require Wordfence plugin to be active.
  * Displays an admin notice and will not fully load the theme's security features without it.
  */
