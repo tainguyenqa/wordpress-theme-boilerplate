@@ -6,6 +6,7 @@
 
 require_once 'includes/custom-functions.php';
 require_once 'includes/security.php';
+require_once 'includes/security-check.php';
 
 
 /**
